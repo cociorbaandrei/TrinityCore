@@ -137,12 +137,12 @@ void Battlenet::Session::AsyncWrite(MessageBuffer* packet)
 {
     if (!IsOpen())
         return;
-
     QueuePacket(std::move(*packet));
+
 }
 
 void Battlenet::Session::SendResponse(uint32 token, pb::Message const* response)
-{
+	{
     Header header;
     header.set_token(token);
     header.set_service_id(0xFE);
@@ -159,7 +159,7 @@ void Battlenet::Session::SendResponse(uint32 token, pb::Message const* response)
     ptr = packet.GetWritePointer();
     packet.WriteCompleted(response->ByteSize());
     response->SerializeToArray(ptr, response->ByteSize());
-
+		
     AsyncWrite(&packet);
 }
 
@@ -178,7 +178,7 @@ void Battlenet::Session::SendResponse(uint32 token, uint32 status)
     uint8* ptr = packet.GetWritePointer();
     packet.WriteCompleted(header.ByteSize());
     header.SerializeToArray(ptr, header.ByteSize());
-
+	
     AsyncWrite(&packet);
 }
 
