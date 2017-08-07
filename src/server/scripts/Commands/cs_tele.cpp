@@ -265,7 +265,7 @@ public:
             if (!player || !player->GetSession())
                 continue;
 
-            // check online security
+            // check online securityw
             if (handler->HasLowerSecurity(player, ObjectGuid::Empty))
                 return false;
 

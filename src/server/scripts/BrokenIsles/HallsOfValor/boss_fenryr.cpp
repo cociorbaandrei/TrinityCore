@@ -31,6 +31,7 @@ public:
 	{
 		boss_fenryrAI(Creature* creature) : BossAI(creature, DATA_FENRYR)
 		{
+
 		}
 
 		void Reset() override

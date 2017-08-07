@@ -19,6 +19,7 @@ public:
 		instance_halls_of_valor_InstanceScript(Map* map) : InstanceScript(map)
 		{
 
+
 		}
 
 		void OnGameObjectCreate(GameObject* go) override
@@ -33,12 +34,12 @@ public:
 
 		bool SetBossState(uint32 type, EncounterState state) override
 		{
-
+			return false;
 		}
 
 		uint32 GetData(uint32 type) const override
 		{
-		
+			return 0;
 		}
 
 		void SetData(uint32 type, uint32 data) override
